@@ -8,8 +8,8 @@ bot.on("ready", () => {
 });
 
 bot.on("message", (message) => {   
-	if (message.content.startsWith("hola")) {     
-		message.channel.send("¡Hola ${member}!");   
+	if (message.content.includes("hola") && message.isMentioned(bot.user)){     
+		message.channel.send(`Hola ${message.member}`);   
 	} 
 });
 
@@ -21,7 +21,7 @@ bot.on('guildMemberAdd', member => {
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
-  channel.send("¡Bienvenid@ al servidor, ${member}, disfruta tu estancia!");
+  channel.send(`Bienvenid@ al servidor, ${member}, disfruta tu estancia!`);
 });
 
 // Event listening for new channels
