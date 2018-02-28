@@ -17,7 +17,7 @@ bot.on("message", (message) => {
 // Event listening for new server members
 bot.on('guildMemberAdd', member => {
   // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find('General', 'member-log');
+  const channel = member.guild.channels.find('general', 'member-log');
   // Do nothing if the channel wasn't found on this server
   if (!channel) return;
   // Send the message, mentioning the member
@@ -26,8 +26,9 @@ bot.on('guildMemberAdd', member => {
 
 // Event listening for new channels
 bot.on('channelCreate', (channel) => {
-	// Send a message to the default channel when a channel is created
-    channel.guild.defaultChannel.send("Se ha creado un nuevo canal: ${channel.name}");
+	var defaultChan = channel.guild.channels.find('name', 'general');
+	// Send a message to the default channel when a channel is create
+        defaultChan.send(`Se ha creado un nuevo canal: ${channel} `);
 })
 
 
