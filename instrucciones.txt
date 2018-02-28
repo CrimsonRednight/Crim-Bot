@@ -1,5 +1,0 @@
-Iniciar Bot -> En la screen introducir "node bot.js"
-Apagar Bot 	-> En la screen presionar "ctrl+c"
-
-Una vez hemos editado el archivo bot.js y realizado los cambios que queramos hay que resetear
-el bot, para ello debemos simplemente apagarlo e iniciarlo con los comandos de arriba.
