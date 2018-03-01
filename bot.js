@@ -48,28 +48,33 @@ bot.on("message", (message) => {
 	// Check Bot is mentioned on the message
 	if (message.isMentioned(bot.user)) {
 		
+		// Transform message to lowercase to easily check words
+		message.toLowerCase();
+		
 		// Bot responds to "hola"
-		if (message.content.includes("hola") || message.content.includes("Hola")){     
+		if (message.content.includes("hola")){     
 			message.channel.send(`Hola ${message.member}`);   
 		} 
 		
 		// Bot responds to "yonki"
-		if (message.content.includes("yonki") || message.content.includes("Yonki")) {
+		if (message.content.includes("yonki")) {
 			message.channel.send(`El único Yonki aquí eres tu ${message.member}`); 
 		}
 		
 		// Bot responds to "ayuda"
-		if (message.content.includes("ayuda") || message.content.includes("Ayuda")) {
-			message.channel.send(`
-			Aquí tienes la lista de comandos: \n
+		if (message.content.includes("ayuda")) {
+			message.channel.send("
+			```Aquí tienes la lista de comandos, responderé a cada palabra que menciones en tu comentario: \n
 			-hola: Te respondo con un saludo \n
 			-yonki: Te respondo devolviendote el insulto \n
 			-ayuda: ¿De verdad quieres que te responda?
-			`);
+			-tutoriales: Te daré un enlace al canal de CrimsonRednight
+			```
+			");
 		}
 		
 		// Bot responds to "tutoriales"
-		if (message.content.includes("tutoriales") || message.content.includes("Tutoriales")) {
+		if (message.content.includes("tutoriales")) {
 			message.channel.send(`Hola ${message.member}, te aconsejo echar un vistazo a: https://www.youtube.es/user/CrimsonRednight`); 
 		}
 		
