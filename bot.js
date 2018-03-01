@@ -59,7 +59,7 @@ bot.on("message", (message) => {
 		}
 		
 		// Bot responds to "ayuda"
-		if (message.content.includes("ayuda") || message.content.includes("Ayuda") {
+		if (message.content.includes("ayuda") || message.content.includes("Ayuda")) {
 			message.channel.send(`
 			Aquí tienes la lista de comandos: \n
 			-hola: Te respondo con un saludo \n
